@@ -7,32 +7,60 @@ h1, h2, h3, h4, h5, h6 {
 	color: rebeccapurple;
 }
 body {
-	box-sizing: border-box;
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: plum;
-	border: 3px solid rebeccapurple;
 	margin-bottom: 25px;
 	color: rebeccapurple;
-	width: 50%;
 	padding: 15px;
-	display: inline-block;
 }
 button {
 	padding: 16px 20px;
 	margin: 8px 0;
 	border: 1px solid rebeccapurple;
 	cursor: pointer;
-	width: 100%;
 	opacity: 0.9;
+}
+form {
+	background-color: plum;
+	border-radius: 5px;
+	padding: 5 px;
+	text-align: center;
+}
+form > input {
+	border: 1px solid rebeccapurple;
+	color: rebeccapurple;
 }
 header {
 	padding: 30px;
 	text-align: center;
 	font-size: 35px;
 }
-nav {
+.left {
 	float: left;
-	width: 30%;
+}
+.right {
+	float: right;
+}
+.topnav {
+	background-color: plum;
+	overflow: hidden;
+}
+.topnav a, button {
+	float: left;
+	color: rebeccapurple;
+	text-align: center;
+	padding: 14px 16px;
+	text-decorator: none;
+	font-size: 17px;
+}
+table, tr, th, td {
+	border: 1px solid rebeccapurple;
+	color: rebeccapurple;
+}
+p {
+	color: rebeccapurple;
+}
+nav {
 	padding: 20px;
 }
 nav ul {
@@ -40,9 +68,7 @@ nav ul {
 	padding: 0;
 }
 article {
-	float: left;
 	padding: 20px;
-	width: 70%;
 }
 section:after{ /*clear floats after the columns */
 	content: "";

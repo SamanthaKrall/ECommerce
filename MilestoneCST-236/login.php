@@ -1,7 +1,10 @@
 <?php
 session_start();
-require 'dbConnector.php';
+include 'dbConnector.php';
 include 'css.css';
+$dbConnector = new dbConnector();
+$connection = $dbConnector->getConnection();
+echo "<body background='Pictures/background.jpg' style='color: magenta'>";
 if ($connection) {
     $attemptedLoginName = $_POST['login_name'];
     $attemptedPassword = $_POST['login_password'];
@@ -9,9 +12,11 @@ if ($connection) {
     $result = mysqli_query($connection, $sql_statement);
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
-            echo "Login Successful!<br>";
+            echo "You have successfully logged in!<br>";
+            echo "<a href='main.php'><button>To The Shirts!</button></a>";
         } else {
-            echo "Login Unsuccessful!<br>";
+            echo "<strong>Login Unsuccessful!</strong><br>Please try again<br>";
+            echo "<a href='index.html'><button>Try Again</button></a>";
             exit;
         }
     } else {
@@ -22,14 +27,5 @@ if ($connection) {
     echo "Error connecting " . mysqli_connect_errno();
     exit;
 }
+echo "</body>";
 ?>
-<html>
-<body>
-	<a><button onclick="goBack()">Go Back</button></a>
-	<script>
-		function goBack() {
-			window.history.back();
-		}
-	</script>
-</body>
-</html>

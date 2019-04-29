@@ -3,15 +3,14 @@
 <body>
 	<h1>Welcome to the Shirt Shack!</h1><br><br>
 	<section>
-		<nav>
+		<nav class="left" style="width: 50%">
 			<h4>Login or Register!</h4>
 			<hr>
 				<button onclick="login()">Login</button>
 				<button onclick="register()">Register</button>
-			<hr>
+			<br><br><br><br>
 			<div id="login" style="display: none">
 				<form method="POST">
-					<hr>
 					User Name:<br>
 					<input type="text" name="login_name" placeholder="User Name"><br>
 					Password:<br>
@@ -22,7 +21,6 @@
 			<div id="register" style="display: none">
 				<form method="POST">
 					<div>
-						<hr>
 						User Name:<br>
 						<input type="text" placeholder="User Name" name="login_name" required><br>
 						Password:<br>
@@ -56,10 +54,10 @@
 			?>
 			</div>
 		</nav>
+		<br><br>
 		<article>
-			<hr>
 			<p>	Your quick and easy source for quality shirts!</p>
-			<hr>
+			<img src="Pictures/anomaly.jpg" style="width: 200px; height: 200px" align="right">		
 		</article>
 	</section>
 	<script>

@@ -20,7 +20,9 @@ $connection->query($query);
 ?>
 <html>
 <body>
-	<h1>You have successfully registered!</h1>
+	<h1>You have successfully registered!</h1><br>
+	<h2> Welcome to the Shirt Shack. Please Login!</h2><br>
+	<a href="index.html"><button>Click me to log in!</button></a>
 	<a><button onclick="goBack()">Go Back</button></a>
 	<script>
 		function goBack() {
