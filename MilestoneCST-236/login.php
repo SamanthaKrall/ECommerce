@@ -1,10 +1,8 @@
 <?php
-session_start();
 include 'dbConnector.php';
-include 'css.css';
 $dbConnector = new dbConnector();
 $connection = $dbConnector->getConnection();
-echo "<body background='Pictures/background.jpg' style='color: magenta'>";
+echo "<body background='Pictures/background.jpg' style='color: white; font-size: 30px'>";
 if ($connection) {
     $attemptedLoginName = $_POST['login_name'];
     $attemptedPassword = $_POST['login_password'];
@@ -12,8 +10,8 @@ if ($connection) {
     $result = mysqli_query($connection, $sql_statement);
     if ($result) {
         if (mysqli_num_rows($result) == 1) {
+            require 'header.php';
             echo "You have successfully logged in!<br>";
-            echo "<a href='main.php'><button>To The Shirts!</button></a>";
         } else {
             echo "<strong>Login Unsuccessful!</strong><br>Please try again<br>";
             echo "<a href='index.html'><button>Try Again</button></a>";

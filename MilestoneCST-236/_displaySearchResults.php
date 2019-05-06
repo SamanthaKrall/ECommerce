@@ -1,5 +1,5 @@
 <?php
-include 'css.css';
+require 'header.php';
 ?>
 <body>
 <table>
@@ -10,8 +10,12 @@ include 'css.css';
 	<?php 
 	for ($x = 0; $x < count($product); $x++) {
 	    echo "<tr>";
-	    echo "<td><img src='Pictures/" . $product[$x]->getProduct_picture() . ".jpg' style='width: 100px; height: 100px'></td>"; 
-	    echo "<td>" . $product[$x]->getProduct_name() . "</td>";
+	    echo "<td><img src='Pictures/" 
+		    . $product[$x]->getProduct_picture() 
+	        . ".jpg' style='width: 100px; height: 100px'></td>"; 
+	    echo "<td>" 
+	        . $product[$x]->getProduct_name() 
+	        . "</td>";
 	    echo "</tr>";
 	}
 	?>

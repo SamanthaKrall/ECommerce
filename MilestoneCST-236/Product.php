@@ -2,11 +2,16 @@
 class Product {
     private $id;
     private $product_name;
+    private $product_description;
     private $product_picture;
-    public function __construct($a, $b, $c) {
-        $this->id = $a;
-        $this->product_name = $b;
-        $this->product_picture = $c;
+    private $product_price;
+    
+    public function __construct($id, $pn, $pd, $pp, $ppr) {
+        $this->id = $id;
+        $this->product_name = $pn;
+        $this->product_description = $pd;
+        $this->product_picture = $pp;
+        $this->product_price = $ppr;
     }
     /**
      * @return mixed
@@ -55,6 +60,38 @@ class Product {
     {
         $this->product_picture = $product_picture;
     }
+    /**
+     * @return mixed
+     */
+    public function getProduct_description()
+    {
+        return $this->product_description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProduct_price()
+    {
+        return $this->product_price;
+    }
+
+    /**
+     * @param mixed $product_description
+     */
+    public function setProduct_description($product_description)
+    {
+        $this->product_description = $product_description;
+    }
+
+    /**
+     * @param mixed $product_price
+     */
+    public function setProduct_price($product_price)
+    {
+        $this->product_price = $product_price;
+    }
+
 
 
 

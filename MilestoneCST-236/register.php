@@ -1,5 +1,4 @@
 <?php
-include 'css.css';
 $login_name = $_POST['login_name'];
 $login_password = $_POST['login_password'];
 $first_name = $_POST['first_name'];
@@ -12,8 +11,6 @@ $state = $_POST['state'];
 $zip_code = $_POST['zip_code'];
 $country = $_POST['country'];
 require 'dbConnector.php';
-session_start();
-$_SESSION['login_name'] = $login_name;
 $query = "INSERT INTO users (user_name, user_password, first_name, last_name, email, phone_number, address, city, state, zip_code, country)
     VALUES ('$login_name', '$login_password', '$first_name', '$last_name', '$email', '$phone_number', '$address', '$city', '$state', '$zip_code', '$country')";
 $connection->query($query);
@@ -23,11 +20,5 @@ $connection->query($query);
 	<h1>You have successfully registered!</h1><br>
 	<h2> Welcome to the Shirt Shack. Please Login!</h2><br>
 	<a href="index.html"><button>Click me to log in!</button></a>
-	<a><button onclick="goBack()">Go Back</button></a>
-	<script>
-		function goBack() {
-			window.history.back();
-		}
-	</script>
 </body>
 </html>

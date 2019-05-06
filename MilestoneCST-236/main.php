@@ -1,40 +1,43 @@
 <?php
-include 'css.css';
 include 'dbConnector.php';
 $db = new dbConnector();
 $conn = $db->getConnection();
 $query = "SELECT * FROM product";
-$low = 0;
-$high = 10;
+require 'header.php';
 ?>
 <html>
 <body>
 
 <h1>Welcome Back to the Shirt Shack</h1>
-<div class="topnav">
-	<a href="logout.php"><button>Logout</button></a>
-</div>
-	<form action="SearchHandler.php">
-		Search for an item:
-		<input type="text" name="searchValue">
-		<input type="submit" value="Search">
-	</form><br><br>
 	<?php $result = $conn->query($query); ?>
-	<table class="preview">
-    	<tr>
-    		<th>Picture</th>
-    		<th>Name</th>
-    		<th>Price</th>
-    		<th>View</th>
-    	</tr>
+	<div class="card-columns">
     	<?php while ($row = $result->fetch_assoc()): ?>
-            	<tr>
-            		<td><img src="Pictures/<?php echo $row['product_picture']; ?>.jpg" style="width: 150px; height: 150px"></td>
-            		<td> <?php echo $row["product_name"]; ?> </td>
-            		<td> <?php echo $row["product_price"]; ?> </td>
-            		<td> <a href="viewProduct.php?view=<?php echo $row['product_id']; ?>" class="view"><button>View</button></a> </td>
-            	</tr>
+    		<div class="card text-white bg-dark mb-3" style="max-width: 540px;">
+    			<div class="row no-gutters">
+    				<div class="col-md-4">
+  						<img src="Pictures/<?php echo $row['product_picture']; ?>.jpg" class="card-img-top" alt="...">
+  					</div>
+  					<div class="col-md-8">
+  						<div class="card-body">
+    						<h5 class="card-title"><?php echo $row['product_name'];?></h5>
+    						<p class="card-text"><?php echo $row['product_price']?></p>
+   				 			<a href="viewProduct.php?view=<?php echo $row['product_id']; ?>" class="btn btn-success">View</a>
+  							<?php if ($_SESSION['role'] < 3) :?>
+  								<input type="button" value="Delete" onclick="deleteProduct(this)" class="btn btn-danger">
+  								<a href="updateProduct.php?update=<?php echo $row['product_id']; ?>" class="btn btn-warning">Update</a> 
+  							<?php endif; ?>
+  						</div>
+  					</div>
+  				</div>
+			</div>
     	<?php endwhile; ?>
+    </div>
 	</table>
+	<script type="text/javascript">
+		function deleteProduct(btn) {
+			var row = btn.parentNode.parentNode;
+			row.parentNode.removeChild(row);
+		}
+	</script>
 </body>
 </html>

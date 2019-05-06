@@ -12,12 +12,13 @@ class dbConnector {
     function getConnection() {
         $connection = new mysqli($this->servername, $this->username, $this->password, $this->database);
         if ($connection->connect_error) {
-            echo "Connection Failed: " . $connection->connect_error . "<br>";
+            echo "Connection Failed: " 
+                . $connection->connect_error 
+                . "<br>";
         } else {
             return $connection;
         }
     }
-
 }
 
 ?>
