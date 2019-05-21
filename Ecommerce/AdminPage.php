@@ -21,7 +21,7 @@ session_start();
 					</div>
 				</div>
 				<div class="row"> 
-					<button type="submit" class="button">Admin Products</button>
+					<button type="submit" class="button">Products</button>
 				</div>
 			</form>
 			<form action= "adminUserPage.php">
@@ -31,7 +31,7 @@ session_start();
 					</div>
 				</div>
 				<div class="row"> 
-					<button type="submit" class="button">Admin Users</button>
+					<button type="submit" class="button">Users</button>
 				</div>
 			</form>
 		</section>

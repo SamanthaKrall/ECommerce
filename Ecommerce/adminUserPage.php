@@ -45,7 +45,6 @@ if($connection) {
             </section>
             <?php
         }
-    }
-    
+    } 
 }
 ?>

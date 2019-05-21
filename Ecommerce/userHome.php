@@ -33,7 +33,7 @@ require_once 'db_connector.php';
 				} elseif (isset($_POST['SAP']))	{
 					$page = "AdminPage.php";
 				} elseif(isset($_POST['SH'])) {
-				    $page = "shoppingCart.php";
+				    $page = "userCart.php";
 				} else {
 					$page = "clean.php";
 				}

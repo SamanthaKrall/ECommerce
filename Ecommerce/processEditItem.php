@@ -10,12 +10,10 @@ $id = $_GET['id'];
 $productName = $_GET['pname'];
 $productDescription = $_GET['pdescription'];
 $productPrice = $_GET['pprice'];
-$productOwnerID = $_GET['ownerID'];
-$productPoints = $_GET['ppoints'];
 $role = $_SESSION['Role'];
 echo "user id " . $_SESSION['userID'];
-if($connection && isset($_SESSION['userID']) && $role == "Admin"){
-    $sql_statement = "UPDATE `Product` SET  `PName` = '$productName', `PDescription` = '$productDescription', `PPrice` = '$productPrice', `userID` = '$productOwnerID', `PPoints` = '$productPoints' WHERE `PID` = '$id' ";
+if($connection && isset($_SESSION['userID']) && $role == "admin"){
+    $sql_statement = "UPDATE product SET  product_name = '$productName', product_description = '$productDescription', product_price = '$productPrice' WHERE product_id = '$id' ";
     $result = mysqli_query($connection, $sql_statement);
     if($result){
         echo "Data updated successfully!";

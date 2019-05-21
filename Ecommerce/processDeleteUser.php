@@ -8,7 +8,7 @@ $db = new db_connector();
 $connection = $db->getConnection();
 $itemToDelete = $_GET['ID'];
 $nametoDelete = $_GET['name'];
-$sql_statement = "DELETE FROM `User` WHERE `User`.`UID` = $itemToDelete";
+$sql_statement = "DELETE FROM users WHERE id = $itemToDelete";
 if($connection){
     $result = mysqli_query($connection, $sql_statement);
     if($result){

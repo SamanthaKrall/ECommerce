@@ -13,11 +13,10 @@ $userLName = $_GET['lname'];
 $userPassword = $_GET['password'];
 $userUsername = $_GET['username'];
 $userRole = $_GET['role'];
-$userPoints = $_GET['upoints'];
 $role = $_SESSION['Role'];
 echo "user id " . $_SESSION['userID'];
-if($connection && isset($_SESSION['userID']) && $role == "Admin"){
-    $sql_statement = "UPDATE `User` SET  `Email` = '$userEmail', `FName` = '$userFName', `LName` = '$userLName', `Password` = '$userPassword', `Username` = '$userUsername', `Role` = '$userRole', `UPoints` = '$userPoints' WHERE `UID` = '$id' ";
+if($connection && isset($_SESSION['userID']) && $role == "admin"){
+    $sql_statement = "UPDATE users SET  email = '$userEmail', first_name = '$userFName', last)name = '$userLName', user_password = '$userPassword', user_name = '$userUsername', user_role = '$userRole' WHERE id = '$id' ";
     $result = mysqli_query($connection, $sql_statement);
     if($result){
         echo "Data updated successfully!";
