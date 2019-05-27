@@ -8,8 +8,6 @@ class processShoppingCart{
     public function addProductID($id){
         $db = new db_connector();
         $conn = $db->getConnection();
-        $stmt = "INSERT INTO order (user_id) VALUES ('$id')";
-        $result = mysqli_query($conn, $stmt);
         $ordered = "SELECT * FROM order WHERE OID = LAST_INSERT_ID()";
         $result2 = mysqli_query($conn, $ordered);
         if($result2){
@@ -23,10 +21,9 @@ class processShoppingCart{
         $db = new db_connector();
         $conn = $db->getConnection();
         $pastorders = "SELECT * FROM orderList (product_id, product_quantity, order_id) 
-                        VALUES ('$pid',  '$quantity', '$orderID')";
-        $result3 = $conn->query($insert);
-        $pastorderquery = $conn->query($pastorders);
-        return $pastorderquery;
+                        WHERE order_id = '$oid' ";
+        $currentorderquery = $conn->query($pastorders);
+        return $currentorderquery;
     }
     public function getPName($productID){
         $db = new db_connector();
@@ -40,7 +37,7 @@ class processShoppingCart{
                 array_push($name_array, $order);
             }
             if($name_array){
-                for($x - 0; $x < count($name_array); $x++){
+                for($x = 0; $x < count($name_array); $x++){
                     $name = $name_array[$x]['product_name'];
                 }
             }
@@ -80,10 +77,10 @@ class processShoppingCart{
         $db = new db_connector();
         $conn = $db->getConnection();
         $orderID = $_SESSION['orderID'];
-        $insert = "INSERT INTO orderList (product_id, product_quantity, order_id)
-                    VALUES ('$pid', '$quantity', '$orderID')";
+        $insert = "INSERT INTO orderlist (product_id, order_id, product_quantity) 
+                    VALUES ('$pid', '$orderID', '$quantity')";
         $pastorders = "SELECT * FROM orderList WHERE order_id = $orderID";
-        $result = $conn->query($insert);
+        $result3 = $conn->query($insert);
         $pastorderquery = $conn->query($pastorders);
         return $pastorderquery;
     }

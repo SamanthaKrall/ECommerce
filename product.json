@@ -1,4 +1,4 @@
-[{"product_id":1, "product_name":"!False", "product_description":"Its funny because its true", "product_picture":"!False", "product_price":9.99},
+[{"product_id":1, "product_name":" !False", "product_description":" Its funny because its true", "product_picture":"!False", "product_price":8.99},
  {"product_id":2, "product_name":"CatPocket", "product_description":"Cat in your pocket", "product_picture":"catpocket", "product_price":10.0},
  {"product_id":3, "product_name":"ProgrammerCaffeine", "product_description":"Programmer an organism that turns caffeine into software", "product_picture":"caffeine", "product_price":10.0},
  {"product_id":4, "product_name":"bugs", "product_description":"99 little bugs in the code 99 little bugs take one down patch it around 137 little bugs in the code", "product_picture":"bugs", "product_price":10.0},

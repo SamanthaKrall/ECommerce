@@ -50,7 +50,7 @@ if(isset($_POST['create'])){
     	Last Name<input type="text" name="lastname"><br>
     	Expiration<input type="text" name="expiration"><br>
     	Card Company<input type="text" name="cardcompany"><br>
-    	Card Type (Credit or Debit)<inpput type="text" name="cardtype"><br>
+    	Card Type (Credit or Debit)<input type="text" name="cardtype"><br>
     	CVV Number (Back of card)<input type="text" name="ccvnumber"><br>
     	Amount<input type="text" name="amount"><br>
     	<input type="hidden" name="create" value="0"><br>

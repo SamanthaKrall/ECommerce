@@ -1,0 +1,2 @@
+"card_number";"first_name";"middle_init";"last_name";"expiration";"card_company";"deb_or_credit";"cvv_number";"user_id";"amount"
+123456789;"Samantha";"K";"Krall";223;"mastercard";"";123;2;1000.0

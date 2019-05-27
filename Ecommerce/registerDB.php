@@ -18,8 +18,8 @@
 		    $EmailAdd = $_POST['Email'];
 		    $Password = $_POST['Keycode'];
 		    $Username = $_POST['Username'];
-		    $addToTable = "INSERT INTO users (user_name, email, first_name, last_name, user_password, user_name)
-                            VALUES (' ', '$FirstName', '$LastName', '$EmailAdd', '$Password', '$Username')";
+		    $addToTable = "INSERT INTO users (first_name, last_name, email, user_password, user_name)
+                            VALUES ('$FirstName', '$LastName', '$EmailAdd', '$Password', '$Username')";
 		    if(mysqli_query($connection, $addToTable)){
 		        echo "New record created successfully<br>";
 		    } else {

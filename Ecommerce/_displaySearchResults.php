@@ -18,7 +18,7 @@
                     for($x = 0; $x < count($products); $x++){
                         echo "<td>" . $products[$x]['product_name'] . "</td>";
                         echo "<td>" . $products[$x]['product_description'] .  "</td>";
-                        echo "<td>" . $products[$x]['product_price'] . "</td>";
+                        echo "<td>" . "$" . $products[$x]['product_price'] . "</td>";
                         echo "<td><img src='Pictures/" . $products[$x]['product_picture'] . ".jpg' height='300' width='300'></td>";
                 ?>
                    <td>

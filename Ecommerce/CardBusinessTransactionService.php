@@ -39,7 +39,6 @@ class CardBusinessTransactionService {
     }
     public function getCreditInfo($id){
         $cardData = new cardDataTransactionService();
-        $processCard = new cardBusinessTransactionService();
         $userID = $_SESSION['userID'];
         $result = $cardData->getCreditInfo($userID);
         if($result){

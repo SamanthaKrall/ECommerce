@@ -25,7 +25,8 @@ class CardDataTransactionService {
     function getCreditInfo($id){
         $db = new db_connector();
         $conn = $db->getConnection();
-        $creditInfo = $conn->query($creditInfo);
+        $creditInfo = "SELECT * FROM cards WHERE user_id = '$id' ";
+        $cardInfo = $conn->query($creditInfo);
         return $cardInfo;
     }
     function addCreditInfo($cn, $fn, $mi, $ln, $ex, $cc, $dc, $cv, $am){

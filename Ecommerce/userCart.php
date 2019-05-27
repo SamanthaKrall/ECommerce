@@ -33,7 +33,6 @@
 	            	<td>Purchase Items</td>
 	            </tr>
 	            <?php 
-	            $total = 0;
 	            for($x = 0; $x < count($cart_array); $x++){
 	                $pname = $processCart->getPName($cart_array[$x]['product_id']);
 	                echo "<tr>";

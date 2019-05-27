@@ -13,7 +13,6 @@
 	</head>
 	<body>
  <?php
- //$oid = $_SESSION['orderID'];
  $id = $_SESSION['userID'];
  $pid = $_POST['id'];
  $quantity = $_POST['quantity'];

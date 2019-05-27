@@ -14,11 +14,13 @@ $connection = $db->getConnection();
 		<link rel="stylesheet" href="loginStyle.css">
 	</head>
 	<body>
-		<table class = "productInfo">
-			<tr>
-				<td>Name</td>
-				<td>Description</td>
-				<td>Price</td>
+		<section class="section">
+			<div class="row">
+				<div class="sixtcolumn">Name</div>
+				<div class="sixtcolumn">Description</div>
+				<div class="sixtcolumn">Price</div>
+			</div>
+			<div class="row">
 				<?php 
 				$id = $_POST['id'];
 				$sql_query = "SELECT * FROM product WHERE product_id = '$id'";
@@ -28,20 +30,21 @@ $connection = $db->getConnection();
 				    array_push($product_array,$product);
 				}
 				for($x = 0; $x < count($product_array); $x++){
-				    echo "<tr>";
-				    echo "<td>" . $product_array[$x]['product_name'] . "</td>";
-				    echo "<td>" . $product_array[$x]['product_description'] .  "</td>";
-				    echo "<td>$" . $product_array[$x]['product_price'] . "</td>";
-				    echo "<img src='Pictures/" . $product_array[$x]['product_picture'] . ".jpg' height='400' width='400' align='right'>";
 				?>
-				<form action="shoppingCart.php" method = "POST">
-                    <input type="text" name="quantity" value =""></input>
-                    <input type = "hidden" name = "id" value = " <?php echo $products[$x]['product_id'] ?> "></input>
-                    <button type = "submit" class="button">Add to Cart</button>
-                </form>
+				<div class="sixtcolumn">
+					<?php echo $product_array[$x]['product_name'];?>
+				</div>
+				<div class="sixtcolumn">
+					<?php echo $product_array[$x]['product_description'];?>
+				</div>
+				<div class="sixtcolumn">
+					<?php echo "$" . $product_array[$x]['product_price'];?>
+				</div>
+				<div class="sixtcolumn">
+					<?php echo "<img src='Pictures/" . $product_array[$x]['product_picture'] . ".jpg' height='400' width='400' align='right'>";?>
+				</div>
 				<?php } ?>
-			</tr>
-
-		 </table>
+			</div>
+		</section>
 	</body>
 </html>
